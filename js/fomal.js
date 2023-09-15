@@ -1113,7 +1113,7 @@ function changeMouseMode() {
 var now1 = new Date();
 
 function createtime1() {
-  var grt = new Date("08/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  var grt = new Date("014/09/2023 02:00:00"); //此处修改你的建站时间或者网站上线时间
   now1.setTime(now1.getTime() + 250);
   var days = (now1 - grt) / 1000 / 60 / 60 / 24;
   var dnum = Math.floor(days);
@@ -3174,10 +3174,10 @@ if (localStorage.getItem("blogbg") != undefined) {
   setBg(localStorage.getItem("blogbg"));
 } else {
   document.getElementById("defineBg").innerText = `:root{
-    --default-bg: https://i.pximg.net/img-master/img/2022/11/20/19/07/27/102954801_p0_master1200.jpg;
-    --darkmode-bg:url(https://lskypro.acozycotage.net/Fomalhaut/img/yuanshen1.webp);
-    --mobileday-bg: https://i.pximg.net/img-master/img/2022/11/20/19/07/27/102954801_p0_master1200.jpg;
-    --mobilenight-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/mb8.webp);
+    --default-bg: /assets/r2.jpg;
+    --darkmode-bg: /assets/r2.jpg;
+    --mobileday-bg: /assets/r2.jpg;
+    --mobilenight-bg: /assets/r2.jpg;
   }`;
 }
 // 切换背景主函数
