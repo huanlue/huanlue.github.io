@@ -65,6 +65,15 @@
   </url>
   
   <url>
+    <loc>http://156.224.26.212/life/movies/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://156.224.26.212/personal/about/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -83,33 +92,6 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/life/movies/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://156.224.26.212/personal/love/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://156.224.26.212/social/fcircle/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://156.224.26.212/personal/bb/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -119,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/social/link/index.html</loc>
+    <loc>http://156.224.26.212/personal/love/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -138,6 +120,24 @@
   
   <url>
     <loc>http://156.224.26.212/site/time/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://156.224.26.212/social/link/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://156.224.26.212/social/fcircle/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
