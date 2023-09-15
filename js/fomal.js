@@ -3174,10 +3174,10 @@ if (localStorage.getItem("blogbg") != undefined) {
   setBg(localStorage.getItem("blogbg"));
 } else {
   document.getElementById("defineBg").innerText = `:root{
-    --default-bg: url(https://source.fomal.cc/img/default_cover_14.webp);
-    --darkmode-bg: url(https://source.fomal.cc/img/default_cover_16.webp);
-    --mobileday-bg: url(https://source.fomal.cc/img/default_cover_14.webp);
-    --mobilenight-bg: url(https://source.fomal.cc/img/default_cover_12.webp);
+    --default-bg: url(https://cdn.staticaly.com/gh/huanlue/image_info@main/img/illust_42899075_20221109_020935.jpg);
+    --darkmode-bg: url(https://cdn.staticaly.com/gh/huanlue/image_info@main/img/illust_101887258_20230125_154205.png);
+    --mobileday-bg: url(https://cdn.staticaly.com/gh/huanlue/image_info@main/img/illust_102693085_20230129_183422.png);
+    --mobilenight-bg: url(https://cdn.staticaly.com/gh/huanlue/image_info@main/img/illust_78381824_20230314_214941.jpg);
   }`;
 }
 // 切换背景主函数
