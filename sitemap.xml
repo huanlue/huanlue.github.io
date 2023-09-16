@@ -29,34 +29,7 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/box/animation/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://156.224.26.212/box/gallery/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://156.224.26.212/box/nav/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://156.224.26.212/life/movies/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -74,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/personal/about/index.html</loc>
+    <loc>http://156.224.26.212/box/animation/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -83,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/life/music/index.html</loc>
+    <loc>http://156.224.26.212/personal/about/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -110,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/site/census/index.html</loc>
+    <loc>http://156.224.26.212/life/music/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -119,7 +92,25 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/site/time/index.html</loc>
+    <loc>http://156.224.26.212/life/movies/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://156.224.26.212/box/gallery/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://156.224.26.212/social/link/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -137,7 +128,16 @@
   </url>
   
   <url>
-    <loc>http://156.224.26.212/social/link/index.html</loc>
+    <loc>http://156.224.26.212/site/census/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://156.224.26.212/site/time/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     

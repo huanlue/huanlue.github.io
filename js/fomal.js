@@ -3174,10 +3174,10 @@ if (localStorage.getItem("blogbg") != undefined) {
   setBg(localStorage.getItem("blogbg"));
 } else {
   document.getElementById("defineBg").innerText = `:root{
-    --default-bg: url(https://github.com/huanlue/image_info/blob/main/image/illust_78381824_20230314_214941.jpg);
-    --darkmode-bg: url(https://github.com/huanlue/image_info/blob/main/img/illust_99426317_20221108_120011.jpg);
-    --mobileday-bg: url(https://github.com/huanlue/image_info/blob/main/img/illust_101887258_20230125_154205.png);
-    --mobilenight-bg: url(https://github.com/huanlue/image_info/blob/main/image/illust_76335642_20221228_090821.jpg);
+    --default-bg: url(https://github.com/huanlue/image_info/blob/main/image/illust_78381824_20230314_214941.jpg?raw=true);
+    --darkmode-bg: url(https://github.com/huanlue/image_info/blob/main/img/illust_99426317_20221108_120011.jpg?raw=true);
+    --mobileday-bg: url(https://github.com/huanlue/image_info/blob/main/img/illust_101887258_20230125_154205.png?raw=true);
+    --mobilenight-bg: url(https://github.com/huanlue/image_info/blob/main/image/illust_76335642_20221228_090821.jpg?raw=true);
   }`;
 }
 // 切换背景主函数
