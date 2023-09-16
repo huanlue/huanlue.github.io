@@ -33,9 +33,9 @@
     <category term="探索" scheme="http://156.224.26.212/categories/%E6%8E%A2%E7%B4%A2/"/>
     
     
-    <category term="共享文件夹" scheme="http://156.224.26.212/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
-    
     <category term="教程" scheme="http://156.224.26.212/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="共享文件夹" scheme="http://156.224.26.212/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
     
   </entry>
   
@@ -79,9 +79,9 @@
     <category term="探索" scheme="http://156.224.26.212/categories/%E6%8E%A2%E7%B4%A2/"/>
     
     
-    <category term="教程" scheme="http://156.224.26.212/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="blog搭建" scheme="http://156.224.26.212/tags/blog%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="教程" scheme="http://156.224.26.212/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
