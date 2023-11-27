@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>http://rankyu.xyz/posts/20231127d.html</loc>
+    
+    <lastmod>2023-11-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://rankyu.xyz/personal/about/index.html</loc>
     
     <lastmod>2023-09-18</lastmod>
@@ -232,6 +241,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://rankyu.xyz/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/</loc>
+    <lastmod>2023-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -243,6 +259,13 @@
   
   <url>
     <loc>http://rankyu.xyz/categories/%E6%BC%94%E7%A4%BA/</loc>
+    <lastmod>2023-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rankyu.xyz/categories/%E8%AF%BB%E4%B9%A6/</loc>
     <lastmod>2023-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
