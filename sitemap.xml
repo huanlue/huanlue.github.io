@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>http://rankyu.xyz/posts/20231224d.html</loc>
+    
+    <lastmod>2023-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://rankyu.xyz/posts/20231210d.html</loc>
     
     <lastmod>2023-12-22</lastmod>
@@ -202,7 +211,7 @@
 
   <url>
     <loc>http://rankyu.xyz/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -210,56 +219,84 @@
   
   <url>
     <loc>http://rankyu.xyz/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/blog%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/Markdown/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/tags/crawler-%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rankyu.xyz/tags/crawler/</loc>
+    <lastmod>2023-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rankyu.xyz/tags/%E7%88%AC%E8%99%AB/</loc>
+    <lastmod>2023-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rankyu.xyz/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
+    <lastmod>2023-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rankyu.xyz/tags/%E7%BB%83%E6%89%8B/</loc>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -268,28 +305,28 @@
   
   <url>
     <loc>http://rankyu.xyz/categories/%E6%8E%A2%E7%B4%A2/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/categories/%E6%BC%94%E7%A4%BA/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/categories/%E8%AF%BB%E4%B9%A6/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://rankyu.xyz/categories/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
