@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>http://rankyu.site/site/time/index.html</loc>
+    
+    <lastmod>2024-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://rankyu.site/posts/20240903d.html</loc>
     
     <lastmod>2024-09-03</lastmod>
@@ -192,15 +201,6 @@
   
   <url>
     <loc>http://rankyu.site/social/link/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://rankyu.site/site/time/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
