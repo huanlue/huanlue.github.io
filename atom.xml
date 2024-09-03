@@ -3,11 +3,11 @@
   <title>rankyu</title>
   
   
-  <link href="http://rankyu.xyz/atom.xml" rel="self"/>
+  <link href="http://rankyu.site/atom.xml" rel="self"/>
   
-  <link href="http://rankyu.xyz/"/>
-  <updated>2024-06-19T08:43:35.537Z</updated>
-  <id>http://rankyu.xyz/</id>
+  <link href="http://rankyu.site/"/>
+  <updated>2024-09-03T03:05:32.128Z</updated>
+  <id>http://rankyu.site/</id>
   
   <author>
     <name>rankyu</name>
@@ -17,9 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>拉格朗日中值定理</title>
+    <link href="http://rankyu.site/posts/20240903d.html"/>
+    <id>http://rankyu.site/posts/20240903d.html</id>
+    <published>2024-09-03T08:05:22.000Z</published>
+    <updated>2024-09-03T03:05:32.128Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一道小题引发的疑问">一道小题引发的疑问</h2><p>ξ的取法两端的极限取一半，误差会在两个“数量级”内？<br>今天做到了一道题,求其极限<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{x^3}$$<br>用拉格朗日中值定理可得<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{xe^x-xe^{-x}}=-sin\xi$$<br>于是就<br>$$\lim_{x\to 0}\cos(xe^x)-cos(xe^{-x}) = \lim_{x\to 0}(xe^x-xe^{-x})<em>{-sin\xi}$$<br>原式转化为：<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{x^3}=\lim_{x\to0}\frac{x(e^x-e^{-x})</em>-sin\xi}{x^3}$$<br>因为$sin\xi\sim x$<br>$$\lim_{x\to0}\frac{x(e^x-e^{-x})<em>(-\sin{x})}{x^3}=\lim_{x\to0}\frac{-2x^3}{x^3}=-2$$<br>原本以为解答就这么结束了，但是$\xi$到底是什么，只是因为极限都在零就能等价于$x$?<br>考虑到$cosx$是偶函数，$cos(xe^{-x})= cos(-xe^{-x})$<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{x^3}=\lim_{x\to0} \frac{\cos(xe^x)-cos(-xe^{-x})}{x^3}$$<br>由拉格朗日定理知：<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(-xe^{-x})}{xe^x-(-xe^{-x})}=-sin\xi_2$$<br>因为泰勒展开之后$xe^x-(-xe^{-x}) \sim 2x+x^3+o(x^3)$而$xe^x-xe^{-x} \sim 2x^2+\dfrac13 x^3$<br>所以前边的$\xi$和这个$\xi_2$是不同的。<br><strong>当</strong>$\xi_2$取得$\frac{xe^x-xe^{-x}}{2}$时，也就是$xe^x$和$-xe^{-x}$的一半能得到正确答案-2<br>$$sin\xi_2= sin(\frac{xe^x-xe^{-x}}{2})\sim x^2+\dfrac16 x^4+o(x^6)$$<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(-xe^{-x})}{x^3}=\lim_{x \to 0 }\frac{(xe^x+xe^{-x})</em>-sin\xi_2}{x^3}= \lim_{x \to 0}\frac{-2x^3-\dfrac53x^5+o(x^5)}{x^3}=-2$$<br>对比$\cos(xe^x)-cos(-xe^{-x})$的级数展开：$-2x^3-\dfrac23x^5-\frac{1}{30}x^7+o(x^7)$,因为$x^4$的系数为零，猜测拉格朗日等价后前两项的系数是对应的，而第三项开始存在误差。</p><h2 id="其他一些的例子">其他一些的例子</h2><p>对于常见的函数无穷小替代(左边是泰勒级数展开，右边是拉格朗日中值近似)<br>$e^x-1 \sim x$：<br>$$\lim_{x \to 0}1+\frac12x+\dfrac16x^2+\dfrac{1}{24}x^3+o(x^3)=\lim_{x \to 0}\frac{e^x-e^0}{x-0} =e^\xi \sim e^\frac{x+0}{2}=\lim_{x \to 0}1+\dfrac12x+\frac18x^2+\dfrac{1}{48}x^3+o(x^3)$$<br>$ln(x+1) \sim x$:<br>$$\lim_{x \to 0}1-\dfrac12x+\dfrac13x^2+o(x^32)=\lim_{x\to0}\frac{ln(x+1)-ln1}{x+1-1}=\frac{1}{\xi} \sim \frac{2}{x+2}=\lim_{x\to0}1-\frac12x+\frac14x^3+o(x^3)$$<br>$f(x)=(1+x)^\alpha$ :      $(1+x)^\alpha \sim 1+\alpha x+\frac{\alpha(\alpha-1)}{2}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{6}x^3+o(x^3)$<br>$$\lim_{x \to 0}\frac{(1+x)^\alpha-(1+0)^\alpha}{x-0}=\alpha(\xi)^{\alpha-1} \sim\alpha(1+\frac{x+0}{2})^{\alpha-1}=\lim_{x \to 0}\alpha+\frac{\alpha(\alpha-1)}{2}x+\frac{\alpha(\alpha-1)(\alpha-2)}{2^3}x^2+o(x^3)$$</p><h2 id="一个猜想">一个猜想</h2><p>于是有以下假设：若$\lim_{x\to0}F(g(x))-F(\phi(x))=0$ ,$g(x)-\phi(x)=0$ ,函数均有一阶导数和原函数<br>则有：$$\lim_{x\to0}\frac{F(g(x))-F(\phi(x))}{g(x)-\phi(x)}=f(\xi) \sim f(\frac{g(x)+\phi(x)}{2})$$<br>F(x)为f(x)的原函数<br>假设$\lim_{x \to0}g(x)-\phi(x)\sim o(1)$<br>转化成积分的形式：<br>$$\int^{g(x)}<em>{\phi(x)}f(x)dx=f(\xi)(g(x)-\phi(x)) \sim f(\frac{g(x)+\phi(x)}{2})*o(1)=f(\phi(x)+\frac{o(x)}{2})*o(1)$$<br>要证明$\lim</em>{x\to0}(F(g(x))-F(\phi(x))-f(\frac{g(x)+\phi(x)}{2})*(g(x)-\phi(x)) \sim o(x^2)*o(f(x))$<br>于是就是求这个极限：<br>$$\lim_{x\to0}\frac{\int^{g(x)}_{\phi(x)}f(x)dx-(f(\phi(x)+\frac{o(x)}{2})<em>o(x))}{x^2</em>f(x)}=A$$<br>显然我不会。<br>为什么取中值的时候与级数的误差会小两个“数量级”呢？虽然说取中值确实是除了取左右两个值的第二选择，那为什么只有取中值的误差会刚好小两级？这只是一个巧合嘛？<br>感觉1/2是一个很神奇的数，傅里叶变换如果有间断点存在，居然是取极限的一半？阶跃函数有的在0处不定义有的时候是1/2.</p><h2 id="最后的证明过程：">最后的证明过程：</h2><p>首先是我们最喜欢的泰勒展开公式:<br>$$f(x)=f(x_o)+f’(x_o)(x-x_o)+\dfrac{1}{2!}f’‘(x_o)(x-x_o)^2+\dfrac{1}{3!}f^{(3)}(x_o)(x-x_o)^3+…+\frac{1}{n!}f^{(n)}(x_o)(x-x_o)^n+o(x^n)$$<br>取$x_o=0$的情况<br>$$f(x)=f(0)+f’(0)x+\dfrac{1}{2!}f’‘(0)x^2+\dfrac{1}{3!}f^{(3)}(0)x^3+…+\frac{1}{n!}f^{(n)}(0)x^n+o(x^n)$$<br>简单的左移一下,然后同时除以x：<br>$$\frac{f(x)-f(0)}{x-0}=f’(0)+\dfrac{1}{2!}f’‘(0)x+\dfrac{1}{3!}f^{(3)}(0)x^2+…+\frac{1}{n!}f^{(n)}(0)x^{n-1}+o(x^{n-1})$$<br>用拉格朗日中值定理可得<br>$$\frac{f(x)-f(0)}{x-0}=f’(\xi)$$<br>假如用其中值$x+0$替代$\xi$,就有<br>$$\frac{f(x)-f(0)}{x-0}=f’(\xi) \sim f’(\dfrac{x}{2})=f’(0)+\dfrac12f’(0)x+\frac{1}{2*2!}f’‘(0)x^2+o(x^2)$$<br>相比原本的$\xi$<br>$$f’(\xi)=f’(0)+\dfrac12f’(0)x+\frac{1}{3!}f’‘(0)x^2+o(x^2)$$<br>于是误差就开始出现了，那个2就是巧合凑上去的。<br>对于$g(x)$和$\phi(x)$这种函数形式也差不多，因为x是一个特定的值，所以g(x)和$\phi(x)$也都是确定值，<strong>在</strong>$\phi(x)$<strong>处展开</strong>,关于复合函数的问题<br>$$\frac{f(g(x))-f(\phi(x))}{g(x)-\phi(x)}=f’(\xi) \sim f’(\dfrac{g(x)+\phi(x)}{2})=\frac{1}{0!}f’({\phi(x)})+\dfrac{1}{1!}f’‘(\phi(x))(\dfrac{g(x)-\phi(x)}{2})+\frac{1}{2!}f’'(\phi(x))(\dfrac{g(x)-\phi(x)}{2})^2+o(x^2)$$</p><p>对比原式泰勒展开：（g(x)和$\phi(x)$都是一个确定的数值）<br>$$f(g(x))=f(\phi(x))+\frac{1}{1!}f’(\phi(x))(g(x)-\phi(x))+\dfrac{1}{2!}f’‘(\phi(x))(g(x)-\phi(x))^2+\frac{1}{3!}f’‘’(\dfrac{g(x)+\phi(x)}{2})(g(x)-\phi(x))^3+o(x^2)$$<br>原本的$\xi$为<br>$$f’(\xi)=\frac{1}{1!}f’(\phi(x))+\dfrac{1}{2!}f’‘(\phi(x))(g(x)-\phi(x))+\frac{1}{3!}f’‘(\phi(x))(g(x)-\phi(x))^2+o(x^2)$$<br>故第三项开始出现误差,而一般做题的时候取前两项也就差不多了。有点用处，毕竟很多时候掌握多种方法便于验证。<br>且第三项的误差为：<br>$$\Delta=\dfrac{1}{48}f’‘(\phi(x))(g(x)-\phi(x))^2$$<br>用一个例子进行必要性验证：<br>$$\lim_{x \to 0}\frac{(1+x)^\alpha-(1+0)^\alpha}{x-0}=\alpha(\xi)^{\alpha-1} \sim\alpha(1+\frac{x+0}{2})^{\alpha-1}=\lim_{x \to 0}\alpha+\frac{\alpha(\alpha-1)}{2<em>1!}x+\frac{\alpha(\alpha-1)(\alpha-2)}{2^2</em>2!}x^2+o(x^3)$$<br>$f’'(\phi(x))=\alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha}$,$g(x)-\phi(x)=x-0=x$<br>第三项的误差确实也满足：<br>$$\frac{\alpha(\alpha-1)(\alpha-2)}{48}x^2$$<br>不过限定条件还不确定，估计和泰勒展开的条件差不多。<br>$$F(g(x))-F(\phi(x))= (g(x)-\phi(x))*f(\xi)\sim  (g(x)-\phi(x))f(\dfrac{g(x)+\phi(x)}{2})$$</p>]]></content>
+    
+    
+    <summary type="html">拉格朗日中值定理与泰勒级数的误差分析</summary>
+    
+    
+    
+    <category term="学习" scheme="http://rankyu.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="高等数学" scheme="http://rankyu.site/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="拉格朗日中值定理" scheme="http://rankyu.site/tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>网络搜索引擎技巧</title>
-    <link href="http://rankyu.xyz/posts/20240619d.html"/>
-    <id>http://rankyu.xyz/posts/20240619d.html</id>
+    <link href="http://rankyu.site/posts/20240619d.html"/>
+    <id>http://rankyu.site/posts/20240619d.html</id>
     <published>2024-06-19T08:05:22.000Z</published>
     <updated>2024-06-19T08:43:35.537Z</updated>
     
@@ -30,19 +53,19 @@
     
     
     
-    <category term="学习" scheme="http://rankyu.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://rankyu.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="搜索" scheme="http://rankyu.xyz/tags/%E6%90%9C%E7%B4%A2/"/>
+    <category term="搜索" scheme="http://rankyu.site/tags/%E6%90%9C%E7%B4%A2/"/>
     
-    <category term="小技巧" scheme="http://rankyu.xyz/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <category term="小技巧" scheme="http://rankyu.site/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>Github 搜索快捷</title>
-    <link href="http://rankyu.xyz/posts/20240618d.html"/>
-    <id>http://rankyu.xyz/posts/20240618d.html</id>
+    <link href="http://rankyu.site/posts/20240618d.html"/>
+    <id>http://rankyu.site/posts/20240618d.html</id>
     <published>2024-06-18T08:05:22.000Z</published>
     <updated>2024-06-19T08:43:26.358Z</updated>
     
@@ -53,21 +76,21 @@
     
     
     
-    <category term="学习" scheme="http://rankyu.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://rankyu.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="搜索" scheme="http://rankyu.xyz/tags/%E6%90%9C%E7%B4%A2/"/>
+    <category term="搜索" scheme="http://rankyu.site/tags/%E6%90%9C%E7%B4%A2/"/>
     
-    <category term="小技巧" scheme="http://rankyu.xyz/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <category term="小技巧" scheme="http://rankyu.site/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
-    <category term="github" scheme="http://rankyu.xyz/tags/github/"/>
+    <category term="github" scheme="http://rankyu.site/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>python crawler学习</title>
-    <link href="http://rankyu.xyz/posts/20231224d.html"/>
-    <id>http://rankyu.xyz/posts/20231224d.html</id>
+    <link href="http://rankyu.site/posts/20231224d.html"/>
+    <id>http://rankyu.site/posts/20231224d.html</id>
     <published>2023-12-24T06:37:22.000Z</published>
     <updated>2024-06-19T08:03:53.082Z</updated>
     
@@ -78,21 +101,21 @@
     
     
     
-    <category term="学习" scheme="http://rankyu.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://rankyu.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="crawler" scheme="http://rankyu.xyz/tags/crawler/"/>
+    <category term="crawler" scheme="http://rankyu.site/tags/crawler/"/>
     
-    <category term="爬虫" scheme="http://rankyu.xyz/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="http://rankyu.site/tags/%E7%88%AC%E8%99%AB/"/>
     
-    <category term="网易云音乐" scheme="http://rankyu.xyz/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    <category term="网易云音乐" scheme="http://rankyu.site/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
   <entry>
     <title>python crawler学习</title>
-    <link href="http://rankyu.xyz/posts/20231210d.html"/>
-    <id>http://rankyu.xyz/posts/20231210d.html</id>
+    <link href="http://rankyu.site/posts/20231210d.html"/>
+    <id>http://rankyu.site/posts/20231210d.html</id>
     <published>2023-12-10T06:37:00.000Z</published>
     <updated>2023-12-22T15:28:26.121Z</updated>
     
@@ -103,17 +126,17 @@
     
     
     
-    <category term="学习" scheme="http://rankyu.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://rankyu.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="crawler 爬虫" scheme="http://rankyu.xyz/tags/crawler-%E7%88%AC%E8%99%AB/"/>
+    <category term="crawler 爬虫" scheme="http://rankyu.site/tags/crawler-%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>《刻意练习》读后感</title>
-    <link href="http://rankyu.xyz/posts/20231127d.html"/>
-    <id>http://rankyu.xyz/posts/20231127d.html</id>
+    <link href="http://rankyu.site/posts/20231127d.html"/>
+    <id>http://rankyu.site/posts/20231127d.html</id>
     <published>2023-11-27T04:39:21.000Z</published>
     <updated>2023-11-27T04:54:00.110Z</updated>
     
@@ -124,17 +147,17 @@
     
     
     
-    <category term="读书" scheme="http://rankyu.xyz/categories/%E8%AF%BB%E4%B9%A6/"/>
+    <category term="读书" scheme="http://rankyu.site/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
-    <category term="读后感" scheme="http://rankyu.xyz/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    <category term="读后感" scheme="http://rankyu.site/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
   <entry>
     <title>建立共享文件夹</title>
-    <link href="http://rankyu.xyz/posts/20230916b.html"/>
-    <id>http://rankyu.xyz/posts/20230916b.html</id>
+    <link href="http://rankyu.site/posts/20230916b.html"/>
+    <id>http://rankyu.site/posts/20230916b.html</id>
     <published>2023-09-16T13:46:03.000Z</published>
     <updated>2024-10-23T14:00:00.000Z</updated>
     
@@ -145,19 +168,19 @@
     
     
     
-    <category term="探索" scheme="http://rankyu.xyz/categories/%E6%8E%A2%E7%B4%A2/"/>
+    <category term="探索" scheme="http://rankyu.site/categories/%E6%8E%A2%E7%B4%A2/"/>
     
     
-    <category term="教程" scheme="http://rankyu.xyz/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://rankyu.site/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="共享文件夹" scheme="http://rankyu.xyz/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <category term="共享文件夹" scheme="http://rankyu.site/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
     
   </entry>
   
   <entry>
     <title>图床的尝试</title>
-    <link href="http://rankyu.xyz/posts/20230916c.html"/>
-    <id>http://rankyu.xyz/posts/20230916c.html</id>
+    <link href="http://rankyu.site/posts/20230916c.html"/>
+    <id>http://rankyu.site/posts/20230916c.html</id>
     <published>2023-09-16T13:46:03.000Z</published>
     <updated>2024-10-23T14:00:00.000Z</updated>
     
@@ -168,19 +191,19 @@
     
     
     
-    <category term="探索" scheme="http://rankyu.xyz/categories/%E6%8E%A2%E7%B4%A2/"/>
+    <category term="探索" scheme="http://rankyu.site/categories/%E6%8E%A2%E7%B4%A2/"/>
     
     
-    <category term="教程" scheme="http://rankyu.xyz/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://rankyu.site/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="图床" scheme="http://rankyu.xyz/tags/%E5%9B%BE%E5%BA%8A/"/>
+    <category term="图床" scheme="http://rankyu.site/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>blog搭建过程(代码都是cv来的/doge）</title>
-    <link href="http://rankyu.xyz/posts/20230914a.html"/>
-    <id>http://rankyu.xyz/posts/20230914a.html</id>
+    <link href="http://rankyu.site/posts/20230914a.html"/>
+    <id>http://rankyu.site/posts/20230914a.html</id>
     <published>2023-09-14T13:46:03.000Z</published>
     <updated>2024-10-23T14:00:00.000Z</updated>
     
@@ -191,19 +214,19 @@
     
     
     
-    <category term="探索" scheme="http://rankyu.xyz/categories/%E6%8E%A2%E7%B4%A2/"/>
+    <category term="探索" scheme="http://rankyu.site/categories/%E6%8E%A2%E7%B4%A2/"/>
     
     
-    <category term="blog搭建" scheme="http://rankyu.xyz/tags/blog%E6%90%AD%E5%BB%BA/"/>
+    <category term="blog搭建" scheme="http://rankyu.site/tags/blog%E6%90%AD%E5%BB%BA/"/>
     
-    <category term="教程" scheme="http://rankyu.xyz/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://rankyu.site/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Markdown语法与外挂标签写法汇总</title>
-    <link href="http://rankyu.xyz/posts/2013454d.html"/>
-    <id>http://rankyu.xyz/posts/2013454d.html</id>
+    <link href="http://rankyu.site/posts/2013454d.html"/>
+    <id>http://rankyu.site/posts/2013454d.html</id>
     <published>2022-08-09T10:19:03.000Z</published>
     <updated>2022-10-23T14:00:00.000Z</updated>
     
@@ -214,12 +237,12 @@
     
     
     
-    <category term="演示" scheme="http://rankyu.xyz/categories/%E6%BC%94%E7%A4%BA/"/>
+    <category term="演示" scheme="http://rankyu.site/categories/%E6%BC%94%E7%A4%BA/"/>
     
     
-    <category term="Markdown" scheme="http://rankyu.xyz/tags/Markdown/"/>
+    <category term="Markdown" scheme="http://rankyu.site/tags/Markdown/"/>
     
-    <category term="外挂标签" scheme="http://rankyu.xyz/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"/>
+    <category term="外挂标签" scheme="http://rankyu.site/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"/>
     
   </entry>
   

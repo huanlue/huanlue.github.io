@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>拉格朗日中值定理</title>
+      <link href="/posts/20240903d.html"/>
+      <url>/posts/20240903d.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="一道小题引发的疑问">一道小题引发的疑问</h2><p>ξ的取法两端的极限取一半，误差会在两个“数量级”内？<br>今天做到了一道题,求其极限<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{x^3}$$<br>用拉格朗日中值定理可得<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{xe^x-xe^{-x}}=-sin\xi$$<br>于是就<br>$$\lim_{x\to 0}\cos(xe^x)-cos(xe^{-x}) = \lim_{x\to 0}(xe^x-xe^{-x})<em>{-sin\xi}$$<br>原式转化为：<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{x^3}=\lim_{x\to0}\frac{x(e^x-e^{-x})</em>-sin\xi}{x^3}$$<br>因为$sin\xi\sim x$<br>$$\lim_{x\to0}\frac{x(e^x-e^{-x})<em>(-\sin{x})}{x^3}=\lim_{x\to0}\frac{-2x^3}{x^3}=-2$$<br>原本以为解答就这么结束了，但是$\xi$到底是什么，只是因为极限都在零就能等价于$x$?<br>考虑到$cosx$是偶函数，$cos(xe^{-x})= cos(-xe^{-x})$<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(xe^{-x})}{x^3}=\lim_{x\to0} \frac{\cos(xe^x)-cos(-xe^{-x})}{x^3}$$<br>由拉格朗日定理知：<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(-xe^{-x})}{xe^x-(-xe^{-x})}=-sin\xi_2$$<br>因为泰勒展开之后$xe^x-(-xe^{-x}) \sim 2x+x^3+o(x^3)$而$xe^x-xe^{-x} \sim 2x^2+\dfrac13 x^3$<br>所以前边的$\xi$和这个$\xi_2$是不同的。<br><strong>当</strong>$\xi_2$取得$\frac{xe^x-xe^{-x}}{2}$时，也就是$xe^x$和$-xe^{-x}$的一半能得到正确答案-2<br>$$sin\xi_2= sin(\frac{xe^x-xe^{-x}}{2})\sim x^2+\dfrac16 x^4+o(x^6)$$<br>$$\lim_{x\to0} \frac{\cos(xe^x)-cos(-xe^{-x})}{x^3}=\lim_{x \to 0 }\frac{(xe^x+xe^{-x})</em>-sin\xi_2}{x^3}= \lim_{x \to 0}\frac{-2x^3-\dfrac53x^5+o(x^5)}{x^3}=-2$$<br>对比$\cos(xe^x)-cos(-xe^{-x})$的级数展开：$-2x^3-\dfrac23x^5-\frac{1}{30}x^7+o(x^7)$,因为$x^4$的系数为零，猜测拉格朗日等价后前两项的系数是对应的，而第三项开始存在误差。</p><h2 id="其他一些的例子">其他一些的例子</h2><p>对于常见的函数无穷小替代(左边是泰勒级数展开，右边是拉格朗日中值近似)<br>$e^x-1 \sim x$：<br>$$\lim_{x \to 0}1+\frac12x+\dfrac16x^2+\dfrac{1}{24}x^3+o(x^3)=\lim_{x \to 0}\frac{e^x-e^0}{x-0} =e^\xi \sim e^\frac{x+0}{2}=\lim_{x \to 0}1+\dfrac12x+\frac18x^2+\dfrac{1}{48}x^3+o(x^3)$$<br>$ln(x+1) \sim x$:<br>$$\lim_{x \to 0}1-\dfrac12x+\dfrac13x^2+o(x^32)=\lim_{x\to0}\frac{ln(x+1)-ln1}{x+1-1}=\frac{1}{\xi} \sim \frac{2}{x+2}=\lim_{x\to0}1-\frac12x+\frac14x^3+o(x^3)$$<br>$f(x)=(1+x)^\alpha$ :      $(1+x)^\alpha \sim 1+\alpha x+\frac{\alpha(\alpha-1)}{2}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{6}x^3+o(x^3)$<br>$$\lim_{x \to 0}\frac{(1+x)^\alpha-(1+0)^\alpha}{x-0}=\alpha(\xi)^{\alpha-1} \sim\alpha(1+\frac{x+0}{2})^{\alpha-1}=\lim_{x \to 0}\alpha+\frac{\alpha(\alpha-1)}{2}x+\frac{\alpha(\alpha-1)(\alpha-2)}{2^3}x^2+o(x^3)$$</p><h2 id="一个猜想">一个猜想</h2><p>于是有以下假设：若$\lim_{x\to0}F(g(x))-F(\phi(x))=0$ ,$g(x)-\phi(x)=0$ ,函数均有一阶导数和原函数<br>则有：$$\lim_{x\to0}\frac{F(g(x))-F(\phi(x))}{g(x)-\phi(x)}=f(\xi) \sim f(\frac{g(x)+\phi(x)}{2})$$<br>F(x)为f(x)的原函数<br>假设$\lim_{x \to0}g(x)-\phi(x)\sim o(1)$<br>转化成积分的形式：<br>$$\int^{g(x)}<em>{\phi(x)}f(x)dx=f(\xi)(g(x)-\phi(x)) \sim f(\frac{g(x)+\phi(x)}{2})*o(1)=f(\phi(x)+\frac{o(x)}{2})*o(1)$$<br>要证明$\lim</em>{x\to0}(F(g(x))-F(\phi(x))-f(\frac{g(x)+\phi(x)}{2})*(g(x)-\phi(x)) \sim o(x^2)*o(f(x))$<br>于是就是求这个极限：<br>$$\lim_{x\to0}\frac{\int^{g(x)}_{\phi(x)}f(x)dx-(f(\phi(x)+\frac{o(x)}{2})<em>o(x))}{x^2</em>f(x)}=A$$<br>显然我不会。<br>为什么取中值的时候与级数的误差会小两个“数量级”呢？虽然说取中值确实是除了取左右两个值的第二选择，那为什么只有取中值的误差会刚好小两级？这只是一个巧合嘛？<br>感觉1/2是一个很神奇的数，傅里叶变换如果有间断点存在，居然是取极限的一半？阶跃函数有的在0处不定义有的时候是1/2.</p><h2 id="最后的证明过程：">最后的证明过程：</h2><p>首先是我们最喜欢的泰勒展开公式:<br>$$f(x)=f(x_o)+f’(x_o)(x-x_o)+\dfrac{1}{2!}f’‘(x_o)(x-x_o)^2+\dfrac{1}{3!}f^{(3)}(x_o)(x-x_o)^3+…+\frac{1}{n!}f^{(n)}(x_o)(x-x_o)^n+o(x^n)$$<br>取$x_o=0$的情况<br>$$f(x)=f(0)+f’(0)x+\dfrac{1}{2!}f’‘(0)x^2+\dfrac{1}{3!}f^{(3)}(0)x^3+…+\frac{1}{n!}f^{(n)}(0)x^n+o(x^n)$$<br>简单的左移一下,然后同时除以x：<br>$$\frac{f(x)-f(0)}{x-0}=f’(0)+\dfrac{1}{2!}f’‘(0)x+\dfrac{1}{3!}f^{(3)}(0)x^2+…+\frac{1}{n!}f^{(n)}(0)x^{n-1}+o(x^{n-1})$$<br>用拉格朗日中值定理可得<br>$$\frac{f(x)-f(0)}{x-0}=f’(\xi)$$<br>假如用其中值$x+0$替代$\xi$,就有<br>$$\frac{f(x)-f(0)}{x-0}=f’(\xi) \sim f’(\dfrac{x}{2})=f’(0)+\dfrac12f’(0)x+\frac{1}{2*2!}f’‘(0)x^2+o(x^2)$$<br>相比原本的$\xi$<br>$$f’(\xi)=f’(0)+\dfrac12f’(0)x+\frac{1}{3!}f’‘(0)x^2+o(x^2)$$<br>于是误差就开始出现了，那个2就是巧合凑上去的。<br>对于$g(x)$和$\phi(x)$这种函数形式也差不多，因为x是一个特定的值，所以g(x)和$\phi(x)$也都是确定值，<strong>在</strong>$\phi(x)$<strong>处展开</strong>,关于复合函数的问题<br>$$\frac{f(g(x))-f(\phi(x))}{g(x)-\phi(x)}=f’(\xi) \sim f’(\dfrac{g(x)+\phi(x)}{2})=\frac{1}{0!}f’({\phi(x)})+\dfrac{1}{1!}f’‘(\phi(x))(\dfrac{g(x)-\phi(x)}{2})+\frac{1}{2!}f’'(\phi(x))(\dfrac{g(x)-\phi(x)}{2})^2+o(x^2)$$</p><p>对比原式泰勒展开：（g(x)和$\phi(x)$都是一个确定的数值）<br>$$f(g(x))=f(\phi(x))+\frac{1}{1!}f’(\phi(x))(g(x)-\phi(x))+\dfrac{1}{2!}f’‘(\phi(x))(g(x)-\phi(x))^2+\frac{1}{3!}f’‘’(\dfrac{g(x)+\phi(x)}{2})(g(x)-\phi(x))^3+o(x^2)$$<br>原本的$\xi$为<br>$$f’(\xi)=\frac{1}{1!}f’(\phi(x))+\dfrac{1}{2!}f’‘(\phi(x))(g(x)-\phi(x))+\frac{1}{3!}f’‘(\phi(x))(g(x)-\phi(x))^2+o(x^2)$$<br>故第三项开始出现误差,而一般做题的时候取前两项也就差不多了。有点用处，毕竟很多时候掌握多种方法便于验证。<br>且第三项的误差为：<br>$$\Delta=\dfrac{1}{48}f’‘(\phi(x))(g(x)-\phi(x))^2$$<br>用一个例子进行必要性验证：<br>$$\lim_{x \to 0}\frac{(1+x)^\alpha-(1+0)^\alpha}{x-0}=\alpha(\xi)^{\alpha-1} \sim\alpha(1+\frac{x+0}{2})^{\alpha-1}=\lim_{x \to 0}\alpha+\frac{\alpha(\alpha-1)}{2<em>1!}x+\frac{\alpha(\alpha-1)(\alpha-2)}{2^2</em>2!}x^2+o(x^3)$$<br>$f’'(\phi(x))=\alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha}$,$g(x)-\phi(x)=x-0=x$<br>第三项的误差确实也满足：<br>$$\frac{\alpha(\alpha-1)(\alpha-2)}{48}x^2$$<br>不过限定条件还不确定，估计和泰勒展开的条件差不多。<br>$$F(g(x))-F(\phi(x))= (g(x)-\phi(x))*f(\xi)\sim  (g(x)-\phi(x))f(\dfrac{g(x)+\phi(x)}{2})$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高等数学 </tag>
+            
+            <tag> 拉格朗日中值定理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网络搜索引擎技巧</title>
       <link href="/posts/20240619d.html"/>
       <url>/posts/20240619d.html</url>
