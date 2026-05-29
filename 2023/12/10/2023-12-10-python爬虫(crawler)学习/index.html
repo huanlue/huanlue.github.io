@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>python crawler学习 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="NONE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python crawler学习">
+<meta property="og:url" content="http://example.com/2023/12/10/2023-12-10-python%E7%88%AC%E8%99%AB(crawler)%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NONE">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2023-12-10T06:37:00.000Z">
+<meta property="article:modified_time" content="2023-12-22T15:28:26.121Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="crawler 爬虫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "python crawler学习",
+  "url": "http://example.com/2023/12/10/2023-12-10-python%E7%88%AC%E8%99%AB(crawler)%E5%AD%A6%E4%B9%A0/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2023-12-10T06:37:00.000Z",
+  "dateModified": "2023-12-22T15:28:26.121Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "John Doe",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/10/2023-12-10-python%E7%88%AC%E8%99%AB(crawler)%E5%AD%A6%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python crawler学习',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">python crawler学习</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">python crawler学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-10T06:37:00.000Z" title="Created 2023-12-10 14:37:00">2023-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-22T15:28:26.121Z" title="Updated 2023-12-22 23:28:26">2023-12-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="1、工具"><a href="#1、工具" class="headerlink" title="1、工具"></a>1、工具</h2><p>jupyter notebook 编辑器， Windows系统</p>
+<h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><p>jupyter notebook 编辑器 可以下载annconda是附带。也可以单独在power shell里：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/AccumulateMore/Spider">资料来源:</a></p>
+<p>下载压缩包解压下来即可。</p>
+<h2 id="2、开始"><a href="#2、开始" class="headerlink" title="2、开始"></a>2、开始</h2><ol>
+<li><p>找到所在的 ipynb 文件目录下</p>
+</li>
+<li><p>按住shift点击鼠标右键，找到打开power shell</p>
+</li>
+<li><p>在命令行输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+<p>加载完过一会浏览器就会弹出来窗口，没弹出来就自己在浏览器的网址输入<a target="_blank" rel="noopener" href="http://localhost:8888/">http://localhost:8888/</a></p>
+<p><img src="https://raw.githubusercontent.com/huanlue/image_info/main/img/blog/%E9%A1%B5%E9%9D%A2.png" alt="页面"></p>
+</li>
+</ol>
+<h2 id="3、介绍"><a href="#3、介绍" class="headerlink" title="3、介绍"></a>3、介绍</h2><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><p>每一个网页都是一份 HTML文档，全称叫 hypertext markup language，是一种文本标记语言，标签含义如下图所示：</p>
+<pre><code>&lt;!DOCTYPE html&gt; 声明为HTML5 文档
+&lt;html&gt; 元素是HTML网页的根元素
+&lt;head&gt; 元素包含了文档的元(meta) 数据，如&lt;meta charset=&quot;utf-8&quot;&gt;定义网页编码格式为utf-8        
+&lt;title&gt; 元素描述了文档的标题
+&lt;body&gt; 元素包含了可见的页面内容
+&lt;h1&gt; 元素定义一个大标题
+&lt;p&gt; 元素定义一个段落			HTML
+</code></pre>
+<p>声明为HTML5 文档<br>元素是HTML网页的根元素<br>元素包含了文档的元(meta) 数据，如定义网页编码格式为utf-8</p>
+<p><strong>网页中在打开开发者模式下，按F12可以查看页面源代码，也就是html源文件。</strong></p>
+<p><img src="https://raw.githubusercontent.com/huanlue/image_info/main/img/blog/%E6%BC%94%E7%A4%BA.png" alt="yanshi"></p>
+<h2 id="4、Requests"><a href="#4、Requests" class="headerlink" title="4、Requests"></a>4、Requests</h2><p>为什么要学习requests，而不是urllib？</p>
+<ol>
+<li>requests的底层实现就是urllib。</li>
+<li>requests在python2和python3中通用，方法完全一样。</li>
+<li>requests简单易用。</li>
+<li>requests能够自动帮我们解压（gzip压缩等）网页内容</li>
+</ol>
+<p><em><strong>requests的作用 作用：</strong></em></p>
+<p><a target="_blank" rel="noopener" href="https://requests-docs-cn.readthedocs.io/zh_CN/latest/_modules/requests/api.htm">发送网络请求，返回响应数据 中文文档API：</a></p>
+<p>requests的用法<br>requests是python实现的简单易用的HTTP库，使用起来比urllib简洁很多<br>因为是第三方库，所以使用前需要cmd安装<br>基本用法：requests.get()用于请求目标网站，类型是一个HTTPresponse类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.status_code) <span class="comment"># 打印状态码</span></span><br><span class="line"><span class="comment">#常见状态码https://www.runoob.com/http/http-status-codes.html</span></span><br><span class="line"><span class="built_in">print</span>(response.url) <span class="comment"># 打印请求url</span></span><br><span class="line"><span class="built_in">print</span>(response.headers) <span class="comment"># 打印头信息</span></span><br><span class="line"><span class="built_in">print</span>(response.cookies) <span class="comment"># 打印cookie信息</span></span><br><span class="line"><span class="built_in">print</span>(response.text) <span class="comment">#以文本形式打印网页源码</span></span><br><span class="line"><span class="built_in">print</span>(response.content) <span class="comment">#以字节流形式打印</span></span><br></pre></td></tr></table></figure>
+
+<p> request常用的有两种请求方法：get方法和post方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#各种请求方法</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="built_in">print</span>(requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>))    <span class="comment"># 最主要的请求方法是get方法和post方法           </span></span><br><span class="line"><span class="built_in">print</span>(requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>))  <span class="comment">#常是用户要账号密码登陆的用的</span></span><br><span class="line"><span class="built_in">print</span>(requests.put(<span class="string">&#x27;http://httpbin.org/put&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(requests.delete(<span class="string">&#x27;http://httpbin.org/delete&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(requests.head(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(requests.options(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>① 数据分两种形式：非结构化数据、结构化数据。</p>
+<ol>
+<li>非结构化数据html等</li>
+</ol>
+<p>处理方法：正则表达式、Xpath。</p>
+<ol>
+<li>结构化数据：json、xml等</li>
+</ol>
+<p>处理方法：转化为python数据类型。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="基本的get请求："><a href="#基本的get请求：" class="headerlink" title="基本的get请求："></a>基本的get请求：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests </span><br><span class="line">response_1 = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response_1.text)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;/n&#x27;</span>)</span><br><span class="line">response_2 = requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response_2.text)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 带参数的GET请求：</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#01_直接将参数放在url内：</span></span><br><span class="line">var = response_1.content.decode(<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(var)</span><br><span class="line"><span class="comment">#02_先将参数填写在dict中，发起请求时params参数指定为dict</span></span><br><span class="line">data = &#123; <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line">response_3 = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, params=data)</span><br><span class="line"><span class="built_in">print</span>(response_3.text)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#解析json</span></span><br><span class="line"><span class="comment"># response = requests.get(&#x27;http://httpbin.org/get&#x27;)</span></span><br><span class="line"><span class="comment"># print(response.text)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response_1.text))</span><br><span class="line"><span class="built_in">print</span>(response_1.json()) <span class="comment">#response.json()方法同json.loads(response.text)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response_1.json()))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单保存一个二进制文件(以图片为例子）</span></span><br><span class="line">response_4 = requests.get(<span class="string">&#x27;https://github.com/huanlue/image_info/blob/main/img/illust_69982274_20221203_104036.jpg?raw=true&#x27;</span>)</span><br><span class="line">b = response_4.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./download/quatratic_girl_2.png&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    flag = f.write(b)</span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Picture have been download successfully!&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;It was fail&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><del>图片保存格式上png为什么和jpg没什么区别？</del></p>
+<h4 id="response-text和response-content的区别"><a href="#response-text和response-content的区别" class="headerlink" title="response.text和response.content的区别:"></a>response.text和response.content的区别:</h4><p>response.text 类型：<br>str 解码类型：根据HTTP头部对响应的编码做出有根据的推测，推测的文本编码 如何修改编码方式：response.encoding&#x3D;”gbk” </p>
+<p>response.content 类型：<br>bytes 解码类型：没有指定 如何修改编码方式：response.content.decode(“utf8”)</p>
+<h2 id="5、高级："><a href="#5、高级：" class="headerlink" title="5、高级："></a>5、高级：</h2><h3 id="为你的请求添加头信息"><a href="#为你的请求添加头信息" class="headerlink" title="为你的请求添加头信息:"></a>为你的请求添加头信息:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">heads = &#123;&#125;</span><br><span class="line">heads[<span class="string">&#x27;User-Agent&#x27;</span>] = <span class="string">&#x27;Mozilla/5.0 &#x27;</span> \</span><br><span class="line"><span class="string">&#x27;(Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 &#x27;</span> \</span><br><span class="line"><span class="string">&#x27;(KHTML, like Gecko) Version/5.1 Safari/534.50&#x27;</span></span><br><span class="line">response = requests.get(<span class="string">&#x27;http://www.baidu.com&#x27;</span></span><br><span class="line">,headers=heads)</span><br></pre></td></tr></table></figure>
+
+<p>头文件的作用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取cookies</span></span><br><span class="line">response = requests.get(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.cookies)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response.cookies))</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> response.cookies.items():</span><br><span class="line">    <span class="built_in">print</span>(k+<span class="string">&#x27;:&#x27;</span>+v)</span><br><span class="line"></span><br><span class="line"><span class="comment">#实例化一个session对象, 让session来发送get或post请求</span></span><br><span class="line">url = <span class="string">&#x27;https://baidu.com&#x27;</span></span><br><span class="line">session = requests.session()</span><br><span class="line">response_6 = session.get(url, headers = heads)</span><br><span class="line"></span><br><span class="line"><span class="comment">#会话维持</span></span><br><span class="line">session = requests.Session()</span><br><span class="line">session.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">response_7 = session.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#超时异常捕获</span></span><br><span class="line"><span class="keyword">import</span> urllib3</span><br><span class="line">urllib3.disable_warnings() <span class="comment">#从urllib3中消除警告</span></span><br><span class="line">response = requests.get(<span class="string">&#x27;https://www.12306.cn&#x27;</span>, verify=<span class="literal">False</span>) <span class="comment">#证书验证设为FALSE</span></span><br><span class="line"><span class="built_in">print</span>(response.status_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 异常处理</span></span><br><span class="line"><span class="comment"># 在你不确定会发生什么错误时，尽量使用try...except来捕获异常</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> ReadTimeout,HTTPError,RequestException</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = requests.get(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,timeout=<span class="number">0.5</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.status_code)</span><br><span class="line"><span class="keyword">except</span> ReadTimeout:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;timeout&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> HTTPError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;httperror&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> RequestException:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;reqerror&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>cookie和session的区别 </p>
+<ol>
+<li>cookie数据存放在客户的浏览器上，session数据放在服务器上</li>
+<li>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗 考虑到安全应当使用session。 </li>
+<li>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能， 考虑到减轻服务器性能方面，应当使用COOKIE。</li>
+<li>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</li>
+</ol>
+<p>cookie 的作用：<br>处理cookie和session </p>
+<ol>
+<li>带上cookie和session的好处： 能够请求到登陆后的页面 </li>
+<li>带上cookie和session的弊端： 一套cookie和session往往对应一个用户，请求太快 请求次数太多，容易被识别为爬虫 不需要cookie的时候尽量不去使用cookie </li>
+<li>有时为了获取登陆的页面，必须发送带有cookie的请求</li>
+</ol>
+<h2 id="6、数据提取"><a href="#6、数据提取" class="headerlink" title="6、数据提取"></a>6、数据提取</h2><p>数据提取就是从响应中获取我们想要的数据的过程。</p>
+<h4 id="数据分类："><a href="#数据分类：" class="headerlink" title="数据分类："></a>数据分类：</h4><p>非结构化的数据：html等<br>处理方法：正则表达式、xpath<br>结构化数据：json，xml等<br>处理方法：转化为python数据类型</p>
+<h4 id="JSON-JavaScript-Object-Notation"><a href="#JSON-JavaScript-Object-Notation" class="headerlink" title="JSON(JavaScript Object Notation)"></a>JSON(JavaScript Object Notation)</h4><h5 id="数据提取之JSON-1-为什么要学习json？"><a href="#数据提取之JSON-1-为什么要学习json？" class="headerlink" title="数据提取之JSON 1.为什么要学习json？"></a>数据提取之JSON 1.为什么要学习json？</h5><p> 由于把json数据转化为python内建数据类型很简单，所以爬虫中，如果我们能够找到返回json数据的URL，就会 尽量使用这种URL，而很多地方也都会返回json </p>
+<h5 id="什么是json？"><a href="#什么是json？" class="headerlink" title="什么是json？"></a>什么是json？</h5><p>JSON 是一种轻量级的数据交换格式，它使得人们很容易的进行阅读和编写。同时 也方便了机器进行解析和生成。适用于进行数据交互的场景，比如网站前台与后台之间的数据交互。 3.哪里能找到返回json的url？ 1.使用chrome切换到手机页面； 2.抓包手机app的软件</p>
+<p><img src="https://raw.githubusercontent.com/huanlue/image_info/main/img/blog/json.png" alt="json"></p>
+<h4 id="json使用注意点"><a href="#json使用注意点" class="headerlink" title="json使用注意点"></a>json使用注意点</h4><p> json中的字符串都是用 双引号 引起来的，且必须是双引号 如果不是双引号 eval:能实现简单的字符串和python类型的转化 replace：把单引号替换为双引号 往一个文件中写入多个json串，不再是一个json串，不能直接读取 这时我们可以一行写一个json串，按照行来读取</p>
+<h2 id="7、动态网站数据抓取"><a href="#7、动态网站数据抓取" class="headerlink" title="7、动态网站数据抓取"></a>7、动态网站数据抓取</h2><h3 id="什么是AJAX："><a href="#什么是AJAX：" class="headerlink" title="什么是AJAX："></a>什么是AJAX：</h3><p>AJAX（Asynchronouse JavaScript And XML）异步JavaScript和XML。过在后台与服务器进 行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情 况下，对网页的某部分进行更新。传统的网页（不使用Ajax）如果需要更新内容，必须重载 整个网页页面。因为传统的在传输数据格式方面，使用的是XML语法。因此叫做AJAX，其 实现在数据交互基本上都是使用JSON。使用AJAX加载的数据，即使使用了JS，将数据渲染 到了浏览器中，在右键-&gt;查看网页源代码还是不能看到通过ajax加载的数据，只能看到使用 这个url加载的html代码。</p>
+<h3 id="获取ajax数据的方式："><a href="#获取ajax数据的方式：" class="headerlink" title="获取ajax数据的方式："></a>获取ajax数据的方式：</h3><p> 直接分析ajax调用的接口。然后通过代码请求这个接口。 </p>
+<ul>
+<li>直接可以请求到数据，不需要做一些解析工作，代码和工作量少。</li>
+<li>分析接口复杂。容易被发现时爬虫</li>
+</ul>
+<p>使用Selenium+chromedriver模拟浏览器行为获取数据。</p>
+<ul>
+<li>直接模拟浏览器的行为，浏览器能请求到的，使用selenium也能请求到，爬虫更加稳定</li>
+<li>代码量多，性能低。</li>
+</ul>
+<h3 id="Selenium-chromedriver获取动态数据："><a href="#Selenium-chromedriver获取动态数据：" class="headerlink" title="Selenium+chromedriver获取动态数据："></a>Selenium+chromedriver获取动态数据：</h3><p>Selenium相当于是一个机器人。可以模拟人类在浏览器上的一些行为，自动处理浏览器上 的一些行为，比如点击，填充数据，删除cookie等。chromedriver是一个驱动Chrome浏览 器的驱动程序，使用他才可以驱动浏览器。当然针对不同的浏览器有不同的driver。</p>
+<p>以下列 出了不同浏览器及其对应的driver：<br><a target="_blank" rel="noopener" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Chrome：</a>	<a target="_blank" rel="noopener" href="https://github.com/mozilla/geckodriver/releases">Firefox：</a>	<a target="_blank" rel="noopener" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">Edge：</a>	<a target="_blank" rel="noopener" href="https://webkit.org/blog/6900/webdriver-support-in-safari-10/">Safari：</a></p>
+<h3 id="安装Selenium和chromedriver："><a href="#安装Selenium和chromedriver：" class="headerlink" title="安装Selenium和chromedriver："></a>安装Selenium和chromedriver：</h3><ol>
+<li>安装Selenium：Selenium有很多语言的版本，有java、ruby、python等。我们下载python 版本的就可以了。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装chromedriver：下载完成后，放到不需要权限的纯英文目录下就可以了<del>放到python编译器的目录下面即可</del></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 Chrome + selenuim</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="comment"># chromedriver的绝对路径</span></span><br><span class="line">driver_path = <span class="string">r&#x27;F:\internet_driver\chromedriver-win64\chromedriver.exe&#x27;</span></span><br><span class="line"><span class="comment"># 初始化一个driver，并且指定chromedriver的路径</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="comment">#设置等待3秒后打开目标网页</span></span><br><span class="line">driver.implicitly_wait(<span class="number">3</span>)</span><br><span class="line">url=<span class="string">&quot;https://www.baidu.com&quot;</span></span><br><span class="line"><span class="comment">#使用get方法请求网页</span></span><br><span class="line">driver.get(url)</span><br><span class="line"><span class="comment">#第三步，如使用浏览器一样开始对网站进行访问</span></span><br><span class="line">driver.maximize_window()  <span class="comment">#设置窗口最大化</span></span><br><span class="line"><span class="comment"># 通过page_source获取网页源代码</span></span><br><span class="line"><span class="built_in">print</span>(driver.page_source)</span><br><span class="line"><span class="comment">#退出浏览器</span></span><br><span class="line"><span class="comment"># driver.quit()</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes："><a href="#Notes：" class="headerlink" title="Notes："></a><strong>Notes：</strong></h3><p>如果只是想要解析网页中的数据，那么推荐将网页源代码扔给lxml来解析。因为lxml底层使用的是C语言，所以解析效率会更高。如果是想要对元素进行一些操作，比如给一个文本框输入值，或者是点击某个按钮，那么就必须使用selenium给我们提供的查找元素的方法。</p>
+<h2 id="8、BeautifulSoup"><a href="#8、BeautifulSoup" class="headerlink" title="8、BeautifulSoup"></a>8、BeautifulSoup</h2><h3 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h3><ul>
+<li>对于一个网页来说，都有一定的特殊结构和层级关系，而且很多节点都有id或class来作区分，Beautiful Soup 就是借助网页的结构和属性等特性来解析网页，Beautiful Soup是一个强大的解析工具</li>
+<li>Beautiful Soup（简称BS4）提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。</li>
+<li>Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。</li>
+<li>BeautifulSoup已成为和lxml、html6lib一样出色的python解释器,为用户灵活地提供不同的解析策略或强劲的速度。</li>
+<li>Beautiful Soup不需要考虑编码方式，除非文档没有指定，重新原始编码方式即可。 </li>
+<li>BeautifulSoup()第一个参数是字符串，即传给BeautiflSoup对象，第二个参数为解析器类型(这里使用xlml)，此时完成BeautifulSoup对象的初始化。然后，将这个对象赋值给soup变量，接下来，就可以调用soup的各个方法和属性解析这串HTML代码了。</li>
+</ul>
+<h3 id="如何遍历文档树？"><a href="#如何遍历文档树？" class="headerlink" title="如何遍历文档树？"></a>如何遍历文档树？</h3><h4 id="直接子节点"><a href="#直接子节点" class="headerlink" title="直接子节点"></a>直接子节点</h4><p><strong>.contents</strong> ：标签的 .content属性可以将tag的子节点以列表的方式输出<br><strong>.children</strong>：返回一个可迭代对象 </p>
+<h4 id="所有子孙节点"><a href="#所有子孙节点" class="headerlink" title="所有子孙节点"></a>所有子孙节点</h4><p><strong>.descendants</strong>属性可以对所有tag的子孙节点进行递归循环，和children类似，我们也需要遍历获取其中内容。 </p>
+<h4 id="节点内容："><a href="#节点内容：" class="headerlink" title="节点内容："></a>节点内容：</h4><p><strong>.string</strong>：返回标签里面的内容<br><strong>.text</strong>：返回标签的文本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="comment">#初始化一个driver</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">url=<span class="string">&quot;https://www.baidu.com&quot;</span></span><br><span class="line"><span class="comment">#使用get方法请求网页</span></span><br><span class="line">driver.get(url)</span><br><span class="line"><span class="comment">#通过page_source获取网页源代码, 放入record</span></span><br><span class="line">record = driver.page_source</span><br><span class="line">soup = BeautifulSoup(record, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(soup.p)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(soup.p))</span><br><span class="line"><span class="built_in">print</span>(soup.p.string)</span><br><span class="line"><span class="built_in">print</span>(soup.p.name)</span><br><span class="line"><span class="built_in">print</span>(soup.p.text)</span><br><span class="line"><span class="built_in">print</span>(soup.p.contents)</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何搜索文档树"><a href="#如何搜索文档树" class="headerlink" title="如何搜索文档树:"></a>如何搜索文档树:</h3><ul>
+<li>find_all(name,attrs,recursive,text, **kwargs)</li>
+</ul>
+<ol>
+<li><p>传入True：找到所有的Tag </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#直接找元素 </span><br><span class="line">soup.find_all(&#x27;b&#x27;) </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传入正则表达式 #通过正则找 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re </span><br><span class="line"><span class="keyword">for</span> tag <span class="keyword">in</span> soup.find_all(re.<span class="built_in">compile</span>(<span class="string">&quot;^b&quot;</span>)): </span><br><span class="line">	<span class="built_in">print</span>(tag.string) <span class="number">3.</span>传入列表 </span><br><span class="line"><span class="comment">#找a 和 b标签 </span></span><br><span class="line">soup.find_all([<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传入列表 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#找a 和 b标签 </span></span><br><span class="line">soup.find_all([<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>keyword参数（name,attrs） </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="built_in">id</span>=<span class="string">&#x27;link2&#x27;</span>) </span><br><span class="line"><span class="comment">#如果传入 href 参数,Beautiful Soup会搜索每个tag的”href”属性: </span></span><br><span class="line">soup.find_all(href=re.<span class="built_in">compile</span>(<span class="string">&quot;elsie&quot;</span>)) </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过text参数可以搜索文档中的字符串内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(text=<span class="string">&quot;Elsie&quot;</span>)</span><br><span class="line">soup.find_all(text=[<span class="string">&#x27;Tillie&#x27;</span>,<span class="string">&#x27;Elsie&#x27;</span>,<span class="string">&#x27;Lacie&#x27;</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>限定查找个数-limit参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">&quot;a&quot;</span>,limit=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>recursive参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#调用tag的 find_all方法，BeautifulSoup会检查当前tag的所有子孙节点，如果只想搜索tag的直接子节点，可是使 用参数recursive＝False</span></span><br><span class="line">soup.find_all(<span class="string">&#x27;title&#x27;</span>,recursive=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup, Comment</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">url=<span class="string">&quot;https://icp.gov.moe/&quot;</span></span><br><span class="line">driver.get(url)</span><br><span class="line">res = driver.page_source</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&#x27;.\demo.html&#x27;</span>, <span class="string">&#x27;w+&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="comment"># res = f.read()</span></span><br><span class="line">    <span class="built_in">print</span>(res, file=f) <span class="comment">#.encode(&#x27;gb2312&#x27;).decode(&#x27;utf-8&#x27;)</span></span><br><span class="line">soup = BeautifulSoup(res, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(soup.find_all(name = <span class="string">&#x27;div&#x27;</span>)[<span class="number">0</span>]))</span><br><span class="line"><span class="built_in">print</span>(soup.find_all(name = <span class="string">&#x27;h1&#x27;</span>, attrs = &#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&quot;title&quot;</span>&#125;))</span><br><span class="line"><span class="built_in">print</span>(soup.find_all(class_ = <span class="string">&quot;bg&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(soup.find_all(name = <span class="string">&#x27;meta&#x27;</span>))</span><br><span class="line"><span class="comment"># print(soup.find_all(name=&#x27;meta&#x27;,text=re.compile(&#x27;.*?1&#x27;))) #一个字符用text，多个就用string</span></span><br><span class="line"><span class="built_in">print</span>(soup.find_all(name=<span class="string">&#x27;h1&#x27;</span>,string=re.<span class="built_in">compile</span>(<span class="string">&#x27;.*?ICP&#x27;</span>)))<span class="comment">#查找的内容在节点里，节点的属性不包括在内&lt;h1 class=&quot;title&quot;&gt;萌国ICP备案查询&lt;/h1&gt;</span></span><br><span class="line"><span class="comment"># print(soup.find_all(string=lambda text: isinstance(text, Comment)))</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wulex/article/details/88563332">正则表达式(. ? *):</a></p>
+<p><code>.</code> 是任意字符 可以匹配任何单个字符，</p>
+<p>例子：正则表达式r.t<code>可以匹配这些字符串：</code>rat<code>、</code>rut<code>、</code>r t<code>，但是不匹配</code>root。</p>
+<p><code>.*？</code> 表示匹配任意字符到下一个符合条件的字符</p>
+<p><code>*</code> 匹配0或多个正好在它之前的那个字符。例如正则表达式。*意味着能够匹配任意数量的任何字符。<br><code>?</code> 匹配0或1个正好在它之前的那个字符。注意：这个元字符不是所有的软件都支持的。<br>.*是指任何字符0个或多个，<br><code>.?</code>是指任何字符0个或1个.</p>
+<p><code>.*</code>具有贪婪的性质，首先匹配到不能匹配为止，根据后面的正则表达式，会进行回溯。<br><code>.\*？</code>则相反，一个匹配以后，就往下进行，所以不会进行回溯，具有最小匹配的性质.</p>
+<p><code>？</code>表示非贪婪模式，即为匹配最近字符 如果不加?就是贪婪模式<code>a.*bc</code> 可以匹配 abcbcbc</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><strong>find_previous_siblings() ,find_previous_sibling()</strong><br>这2个方法通过 .previous_siblings 属性对当前 tag 的前面解析的兄弟 tag 节点进行迭代,<br>find_previous_siblings() 方法返回所有符合条件的前面的兄弟节点, find_previous_sibling() 方法返回第一个符合条件的前面的兄弟节点</p>
+<p><strong>find_all_next() ,find_next()</strong><br>这2个方法通过 .next_elements 属性对当前 tag 的之后的 tag 和字符串进行迭代,<br>find_all_next() 方法返回所有符合条件的节点<br>find_next() 方法返回第一个符合条件的节点 </p>
+<p><strong>find_all_previous() 和 find_previous()</strong><br>这2个方法通过 .previous_elements 属性对当前节点前面的 tag 和字符串进行迭代,<br>find_all_previous() 方法返回所有符合条件的节点,<br>find_previous()方法返回第一个符合条件的节点</p>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><p>这就是另一种与 find_all 方法有异曲同工之妙的查找方法. 写 CSS 时，标签名不加任何修饰，类名前加.，id名前加#，在这里我们也可以利用类似的方法来筛选元素，用到的方法是 soup.select()，返回类型是 list。</p>
+<p>（1）通过标签名查找 soup.select(‘a’)<br>（2）通过类名查找 soup.select(‘.sister’)<br>（3）通过 id 名查找 soup.select(‘#link1’)<br>（4）组合查找 soup.select(‘p #link1’)<br>（5）属性查找 soup.select(‘a[class&#x3D;”sister”]’)<br>（6）获取内容 get_text()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests </span><br><span class="line"></span><br><span class="line"><span class="comment"># 用bs4解析xtml</span></span><br><span class="line">url = <span class="string">&#x27;https://www.cnblogs.com/pinard/default.html?page=&#123;&#125;&#x27;</span></span><br><span class="line">urls = [url.<span class="built_in">format</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">15</span>)]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(urls))  <span class="comment"># 一共14页的数据</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">. 表示 对class属性进行筛选</span></span><br><span class="line"><span class="string"># 表示 对id属性进行筛选</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得每页的标题</span></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">    response = requests.get(url)                  <span class="comment"># 请求</span></span><br><span class="line">    soup = BeautifulSoup(response.text,<span class="string">&#x27;lxml&#x27;</span>)     </span><br><span class="line">    blogs = soup.select(<span class="string">&#x27;.day&#x27;</span>)  <span class="comment"># 一页里面day属性有十个，有十篇博客</span></span><br><span class="line">    <span class="keyword">for</span> blog <span class="keyword">in</span> blogs:                        </span><br><span class="line">        title = blog.select(<span class="string">&#x27;.postTitle a span&#x27;</span>)[<span class="number">0</span>].get_text()  <span class="comment"># 点.表示class属性   .postTitle 表示 class = postTitle         </span></span><br><span class="line">        abstract = blog.select(<span class="string">&#x27;.postCon div&#x27;</span>)[<span class="number">0</span>].get_text()    <span class="comment"># 空格表示下一级</span></span><br><span class="line">        date = blog.select(<span class="string">&#x27;.postDesc&#x27;</span>)[<span class="number">0</span>].get_text() </span><br><span class="line">        read = blog.select(<span class="string">&#x27;.post-view-count&#x27;</span>)[<span class="number">0</span>].get_text() </span><br><span class="line">        pinlun = blog.select(<span class="string">&#x27;.post-comment-count&#x27;</span>)[<span class="number">0</span>].get_text() </span><br><span class="line">        tuijian = blog.select(<span class="string">&#x27;.post-digg-count&#x27;</span>)[<span class="number">0</span>].get_text() </span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(title,abstract,date,read,pinlun,tuijian) </span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/10/2023-12-10-python%E7%88%AC%E8%99%AB(crawler)%E5%AD%A6%E4%B9%A0/">http://example.com/2023/12/10/2023-12-10-python%E7%88%AC%E8%99%AB(crawler)%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/crawler-%E7%88%AC%E8%99%AB/">crawler 爬虫</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/12/24/2023-12-24-%E7%88%AC%E5%8F%96%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/" title="python crawler学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">python crawler学习</div></div><div class="info-2"><div class="info-item-1">爬取网易云音乐只能说困难重重 抓取歌单目录上各个歌曲的ip123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#昨天的成果# 尝试抓取一个网页信息，作为练习的素材，自己找起来太慢了from bs4 import BeautifulSoup, Commentfrom selenium import webdriverimport requestsimport osimport reimport ioimport sysimport urllib.request#改变标准输出的默认编码sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#x27;gb18030&#x27;)#抓取网易云音乐歌曲 + 评论headers = &#123;        &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Macintosh;...</div></div></div></a><a class="pagination-related" href="/2023/11/27/2023-11-26-%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E8%AF%BB%E5%90%8E%E6%84%9F/" title="《刻意练习》读后感"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">《刻意练习》读后感</div></div><div class="info-2"><div class="info-item-1">原因主要原因：为了开始blog每周的坚持计划。次要原因：这周准备复习六级，在书堆里翻到了这本刻意练习还有吴军写的数学之美。 内容主题10000小时定律是过去十几年来一直盛行的一个想法。大概就是一个人想要掌握一项技能大概需要10000小时的练习时间。 而刻意练习这部分则在某种意义上否定了这个观点，认为这不是一个充要条件，就算没有达到10000小时，在刻意练习的背后当然也能做到。 它的目的在建立一个东西—-心理表征：即人类对外界的认知和内部表达的抽象。方法论大概是：观察&amp;对比-&gt; 言传身授-&gt; 及时反馈&amp;调整 -&gt; 建立假说&amp;改进而这个限度应该在我们所处的极限范围，这样才能成长的最快。如果可以的话最好是找一个人生的导师用于分享。causal learning 不是随意学习。 其他一些问题我又该如何打破这个局限呢我表达终究是片面的，很多信息藏于自己的脑海，想要表述却不知道从何说起…… 成功的内核3F -&gt;fouus feedback fix in 出生 or 出身终于有人承认天赋这种东西是不存在的了，为何我以前都深信不疑？  父母和同学们...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">1、工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">说明：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text">2、开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">3、介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">html文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81Requests"><span class="toc-number">4.</span> <span class="toc-text">4、Requests</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84get%E8%AF%B7%E6%B1%82%EF%BC%9A"><span class="toc-number">4.2.1.</span> <span class="toc-text">基本的get请求：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#response-text%E5%92%8Cresponse-content%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.2.</span> <span class="toc-text">response.text和response.content的区别:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E9%AB%98%E7%BA%A7%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">5、高级：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%A0%E7%9A%84%E8%AF%B7%E6%B1%82%E6%B7%BB%E5%8A%A0%E5%A4%B4%E4%BF%A1%E6%81%AF"><span class="toc-number">5.1.</span> <span class="toc-text">为你的请求添加头信息:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96"><span class="toc-number">6.</span> <span class="toc-text">6、数据提取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">6.1.</span> <span class="toc-text">数据分类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON-JavaScript-Object-Notation"><span class="toc-number">6.2.</span> <span class="toc-text">JSON(JavaScript Object Notation)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E4%B9%8BJSON-1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0json%EF%BC%9F"><span class="toc-number">6.2.1.</span> <span class="toc-text">数据提取之JSON 1.为什么要学习json？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFjson%EF%BC%9F"><span class="toc-number">6.2.2.</span> <span class="toc-text">什么是json？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#json%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">6.3.</span> <span class="toc-text">json使用注意点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81%E5%8A%A8%E6%80%81%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96"><span class="toc-number">7.</span> <span class="toc-text">7、动态网站数据抓取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFAJAX%EF%BC%9A"><span class="toc-number">7.1.</span> <span class="toc-text">什么是AJAX：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96ajax%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">7.2.</span> <span class="toc-text">获取ajax数据的方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Selenium-chromedriver%E8%8E%B7%E5%8F%96%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">7.3.</span> <span class="toc-text">Selenium+chromedriver获取动态数据：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Selenium%E5%92%8Cchromedriver%EF%BC%9A"><span class="toc-number">7.4.</span> <span class="toc-text">安装Selenium和chromedriver：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notes%EF%BC%9A"><span class="toc-number">7.5.</span> <span class="toc-text">Notes：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81BeautifulSoup"><span class="toc-number">8.</span> <span class="toc-text">8、BeautifulSoup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">8.1.</span> <span class="toc-text">介绍：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%81%8D%E5%8E%86%E6%96%87%E6%A1%A3%E6%A0%91%EF%BC%9F"><span class="toc-number">8.2.</span> <span class="toc-text">如何遍历文档树？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-number">8.2.1.</span> <span class="toc-text">直接子节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E5%AD%90%E5%AD%99%E8%8A%82%E7%82%B9"><span class="toc-number">8.2.2.</span> <span class="toc-text">所有子孙节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">8.2.3.</span> <span class="toc-text">节点内容：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%9C%E7%B4%A2%E6%96%87%E6%A1%A3%E6%A0%91"><span class="toc-number">8.3.</span> <span class="toc-text">如何搜索文档树:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">8.4.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">8.5.</span> <span class="toc-text">CSS选择器</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/29/hello-world/" title="Hello World">Hello World</a><time datetime="2026-05-29T03:18:35.742Z" title="Created 2026-05-29 11:18:35">2026-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/03/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E4%B8%8E%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0%E7%9A%84%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90/" title="拉格朗日中值定理">拉格朗日中值定理</a><time datetime="2024-09-03T08:05:22.000Z" title="Created 2024-09-03 16:05:22">2024-09-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/19/%E7%BD%91%E7%BB%9C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%8A%80%E5%B7%A7/" title="网络搜索引擎技巧">网络搜索引擎技巧</a><time datetime="2024-06-19T08:05:22.000Z" title="Created 2024-06-19 16:05:22">2024-06-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/18/Github%20%E6%90%9C%E7%B4%A2%E5%BF%AB%E6%8D%B7/" title="Github 搜索快捷">Github 搜索快捷</a><time datetime="2024-06-18T08:05:22.000Z" title="Created 2024-06-18 16:05:22">2024-06-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/24/2023-12-24-%E7%88%AC%E5%8F%96%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/" title="python crawler学习">python crawler学习</a><time datetime="2023-12-24T06:37:22.000Z" title="Created 2023-12-24 14:37:22">2023-12-24</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
